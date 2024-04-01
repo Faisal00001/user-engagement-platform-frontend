@@ -7,6 +7,7 @@ const Main = () => {
     return (
         <div>
             <Navbar></Navbar>
+            {/* Main Layout children */}
             <Outlet></Outlet>
             <Toaster
                 position="top-center"

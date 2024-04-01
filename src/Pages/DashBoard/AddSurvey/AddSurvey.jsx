@@ -12,7 +12,7 @@ const AddSurvey = () => {
     const handleStatusChange = (event) => {
         setStatus(event.target.value)
     }
-
+    // Adding survey
     const handleSurvey = (event) => {
 
         event.preventDefault();

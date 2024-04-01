@@ -5,8 +5,9 @@ import SurveyCard from "../../components/SurveyCard/SurveyCard";
 
 
 const Home = () => {
-
+    // useState hooks for storing surveys 
     const [surveys, setSurveys] = useState([])
+    // Fetching all surveys
     useEffect(() => {
 
         const fetchData = async () => {
@@ -34,6 +35,7 @@ const Home = () => {
             <div className="px-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-24">
                     {
+                        // Looping through the surveys
                         surveys.map(survey => <SurveyCard key={survey._id} survey={survey}></SurveyCard>)
                     }
 

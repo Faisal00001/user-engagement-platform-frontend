@@ -14,7 +14,7 @@ const SurveyCard = ({ survey }) => {
     const { title, description, status, _id } = survey
     const axiosSecure = useAxiosSecure()
     const [, refetch,] = useSurvey()
-
+    // Getting participated Mission IDS
     let participatedMission_Id = []
     for (let item of participatedMissions) {
         participatedMission_Id.push(item.survey_id)
@@ -32,6 +32,7 @@ const SurveyCard = ({ survey }) => {
                 status,
                 survey_id: _id
             }
+            // Post participate data
             const response = await axiosSecure.post('/mySurveyMission', data)
             if (response.data.insertedId) {
                 Swal.fire({
@@ -62,7 +63,9 @@ const SurveyCard = ({ survey }) => {
                 <p>{description}</p>
                 <p className="font-semibold text-lg">Status : {status}</p>
                 <div className="card-actions justify-center mt-2 ">
-                    <button onClick={() => handleParticipate(survey)} disabled={status === 'closed' ? true : false} className="btn w-[90%] hover:bg-black bg-base-content text-white">{participatedMission_Id.includes(_id) ? 'Already participated' : 'Participate'}</button>
+                    <button onClick={() => handleParticipate(survey)} disabled={status === 'closed' ? true : false} className="btn w-[90%] hover:bg-black bg-base-content text-white">
+                        {/* Checking if that user already participate */}
+                        {participatedMission_Id.includes(_id) ? 'Already participated' : 'Participate'}</button>
                 </div>
             </div>
         </div>

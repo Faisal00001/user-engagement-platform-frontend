@@ -10,6 +10,7 @@ const Login = () => {
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate()
     const location = useLocation()
+    // Getting location in form to redirect after login if have
     const from = location.state?.from?.pathname || '/'
     const handleLogin = (event) => {
         event.preventDefault()
@@ -18,6 +19,7 @@ const Login = () => {
         const email = form.email.value
         const password = form.password.value;
         console.log(email, password)
+        // Sign In using email and password
         signIn(email, password)
             .then(result => {
                 console.log(result.user)

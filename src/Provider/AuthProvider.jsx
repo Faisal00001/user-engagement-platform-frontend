@@ -31,14 +31,19 @@ const AuthProvider = ({ children }) => {
         });
     }
     useEffect(() => {
+        // Subscribe to authentication state changes
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            // Set the current user in the state
             setUser(currentUser)
             console.log(currentUser)
+            // If there is a current user (i.e., user is authenticated)
             if (currentUser) {
                 const userInfo = { email: currentUser.email }
+                // Send a POST request to the '/jwt' endpoint with user info
                 axiosPublic.post('/jwt', userInfo)
                     .then(res => {
                         if (res.data.token) {
+                            // Store the token in local storage
                             localStorage.setItem('access-token', res.data.token)
                             setLoading(false);
                         }
@@ -47,11 +52,13 @@ const AuthProvider = ({ children }) => {
 
             }
             else {
+                // Remove access token from local storage
                 localStorage.removeItem('access-token');
                 setLoading(false);
             }
 
         })
+        // Clean up function to unsubscribe from authentication state changes
         return () => {
             return unSubscribe();
         }

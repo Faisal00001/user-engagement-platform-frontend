@@ -18,20 +18,13 @@ const SignUp = () => {
         const photo = form.photo.value
         const email = form.email.value
         const password = form.password.value
+        // Password Constraint setup
         if (password.length < 6) {
             toast.error("Password length should be at least 6 characters")
             return
         }
-        const uppercaseRegex = /[A-Z]/;
-        const specialCharacterRegex = /[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/;
-        if (!uppercaseRegex.test(password)) {
-            toast.error("Password should contain at least one uppercase letter")
-            return
-        }
-        if (!specialCharacterRegex.test(password)) {
-            toast.error("Password should contain at least one special character")
-            return
-        }
+
+        // Creating User
         createUser(email, password)
             .then(res => {
                 console.log(res.user)

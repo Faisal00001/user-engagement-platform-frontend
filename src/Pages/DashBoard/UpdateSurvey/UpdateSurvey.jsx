@@ -37,7 +37,7 @@ const UpdateSurvey = () => {
             confirmButtonText: "Save",
             denyButtonText: `Don't save`
         }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
+
             if (result.isConfirmed) {
                 axiosSecure.patch(`/updateSurvey/${updateSurvey._id}`, updateInfo)
                     .then(res => {

@@ -20,10 +20,12 @@ const Missions = () => {
             return res.data;
         }
     })
+    // Getting participate Surveys
     let participatedMissions_id = []
     for (let item of participatedMissions) {
         participatedMissions_id.push(item.survey_id)
     }
+    // Getting not participate Surveys
     const incompleteSurveys = allSurveys.filter(survey => {
         return !participatedMissions_id.includes(survey._id)
     })
