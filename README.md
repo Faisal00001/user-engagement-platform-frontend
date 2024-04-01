@@ -23,9 +23,13 @@
 ### Backend Installation (Using npm install )
 ### Before running the frontend application, make sure you have Node.js and npm installed on your system.
 
-1. Install dependencies using npm:  
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+2. Install dependencies using npm:  
 npm install
 
-2. Once dependencies are installed, start the backend server:  
+3. Once dependencies are installed, start the backend server:  
 nodemon index.js
 
