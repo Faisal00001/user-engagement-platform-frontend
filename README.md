@@ -1,8 +1,31 @@
-# React + Vite
+## Installation
+### Frontend Installation (Using npm install --force)
+### Before running the frontend application, make sure you have Node.js and npm installed on your system.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Clone the repository:
 
-Currently, two official plugins are available:
+   ```bash
+   git clone <repository-url>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Navigate to the project directory:
+
+   cd user-management-server-frontend
+
+3. Install dependencies using npm with the --force flag to force installation:
+
+ 
+   npm install --force
+
+4.Once the dependencies are installed, you can start the development server: 
+   
+   npm run dev 
+
+### Backend Installation (Using npm install )
+### Before running the frontend application, make sure you have Node.js and npm installed on your system.
+
+1. Install dependencies using npm:  
+npm install
+
+2. Once dependencies are installed, start the backend server:  
+nodemon index.js
+
