@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
+import PageTitle from "../../../components/PageTitle/PageTitle";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
@@ -43,6 +44,7 @@ const AddSurvey = () => {
     }
     return (
         <div>
+            <PageTitle title={'EngageHub | Add Survey'}></PageTitle>
             <h3 className="text-2xl font-semibold text-center md:text-4xl">Add a Survey</h3>
             <div className="mt-10">
                 <form onSubmit={handleSurvey} className="max-w-sm mx-auto">

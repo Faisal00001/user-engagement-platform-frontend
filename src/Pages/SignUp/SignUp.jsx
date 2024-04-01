@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
+import PageTitle from "../../components/PageTitle/PageTitle";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const SignUp = () => {
@@ -64,7 +65,7 @@ const SignUp = () => {
     return (
         <div className="flex min-h-full pt-24 flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-
+                <PageTitle title={'EngageHub | SignUp'}></PageTitle>
                 <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Registration</h2>
             </div>
 

@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 
 const Login = () => {
@@ -29,6 +30,7 @@ const Login = () => {
     }
     return (
         <div className="flex min-h-full flex-col pt-24 justify-center px-6 py-12 lg:px-8">
+            <PageTitle title={'EngageHub | Login'}></PageTitle>
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
 
                 <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Login to your account</h2>

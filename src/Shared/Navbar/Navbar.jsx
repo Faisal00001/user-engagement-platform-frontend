@@ -1,50 +1,47 @@
 import { useContext } from "react";
 import { IoMenuSharp } from "react-icons/io5";
 import { PiMetaLogoFill } from "react-icons/pi";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
+    const navigate = useNavigate()
     const handleLogOut = () => {
         logOut()
-            .then()
+            .then(() => {
+                navigate('/login')
+            })
             .catch(error => {
                 console.log(error.message)
             })
     }
     const navLinks = <>
-        <li>
+        <li className="text-white">
             <NavLink
                 to="/"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-red-500" : "text-white font-medium"
-                }
+
             >
                 Home
             </NavLink>
         </li>
 
-        <li>
+        <li className="text-white">
             <NavLink
                 to="/dashboard/missions"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-red-500" : "text-white  font-medium"
-                }
+
             >
                 Dashboard
             </NavLink>
         </li>
 
 
-        <li>
+        <li className="text-white">
             {
                 user ? <>
                     <button onClick={handleLogOut} className="text-white">LogOut</button>
                 </> : <><NavLink
                     to="/login"
-                    className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "text-red-500" : "text-white  font-medium"
-                    }
+
                 >
                     Login
                 </NavLink></>

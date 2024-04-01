@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import PageTitle from "../../../components/PageTitle/PageTitle";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useSurvey from "../../../hooks/useSurvey";
@@ -28,7 +29,6 @@ const Missions = () => {
     })
     const handleParticipate = async (survey) => {
         if (user?.email) {
-            console.log(survey)
             const { title, description, status, _id } = survey
             const { email, displayName } = user
             const data = {
@@ -63,6 +63,7 @@ const Missions = () => {
     }
     return (
         <div>
+            <PageTitle title={'EngageHub | Available Missions'}></PageTitle>
             <h3 className="text-2xl my-10 font-semibold text-center md:text-4xl">Available Surveys</h3>
             <div className="overflow-x-auto">
                 <table className="table table-xs table-pin-rows table-pin-cols">

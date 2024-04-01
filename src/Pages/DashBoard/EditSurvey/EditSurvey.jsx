@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import PageTitle from "../../../components/PageTitle/PageTitle";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
@@ -47,6 +48,7 @@ const EditSurvey = () => {
 
     return (
         <div>
+            <PageTitle title={'EngageHub | Edits Survey'}></PageTitle>
             <h3 className="text-2xl my-10 font-semibold md:text-4xl text-center">Edit Surveys</h3>
             <div className="overflow-x-auto">
                 <table className="table table-xs table-pin-rows table-pin-cols">

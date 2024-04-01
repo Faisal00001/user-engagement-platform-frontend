@@ -7,6 +7,7 @@ import AddSurvey from "../Pages/DashBoard/AddSurvey/AddSurvey";
 import EditSurvey from "../Pages/DashBoard/EditSurvey/EditSurvey";
 import Missions from "../Pages/DashBoard/Missions/Missions";
 import UpdateSurvey from "../Pages/DashBoard/UpdateSurvey/UpdateSurvey";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -33,6 +35,7 @@ const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
+        errorElement: <ErrorPage></ErrorPage>,
         element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
         children: [
             {
